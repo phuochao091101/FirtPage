@@ -8,17 +8,12 @@ import About from "./screens/About";
 import DetailsScreen from "./screens/Detail";
 import Navigator from "./routes/homeStack";
 
-function App() {
-  const Stack = createNativeStackNavigator();
+export default function MyDrawer() {
   const Drawer = createDrawerNavigator();
   return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="Details" component={DetailsScreen} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <Drawer.Navigator useLegacyImplementation>
+      <Drawer.Screen name="Home" component={Home} />
+      <Drawer.Screen name="Article" component={About} />
+    </Drawer.Navigator>
   );
 }
-
-export default App;
